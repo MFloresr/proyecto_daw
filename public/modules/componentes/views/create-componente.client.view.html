@@ -1,0 +1,60 @@
+<section data-ng-controller="ComponentesController">
+    <div class="page-header">
+        <h1>New Componente</h1>
+    </div>
+    <div class="col-md-12">
+        <form class="form-horizontal" data-ng-submit="create()" novalidate>
+            <fieldset>
+                <div class="form-group">
+                    <label class="control-label" for="marca">Marca</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="marca" id="marca" class="form-control" placeholder="Marca" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="modelo">Modelo</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="modelo" id="modelo" class="form-control" placeholder="Modelo" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="nserie">Nserie</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="nserie" id="nserie" class="form-control" placeholder="Nserie" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="precio">Precio</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="precio" id="precio" class="form-control" placeholder="Precio" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="url_img">Url_img</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="url_img" id="url_img" class="form-control" placeholder="Url_img" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="descripcion">Descripcion</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="descripcion" id="descripcion" class="form-control" placeholder="Descripcion" required>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <input type="submit" class="btn btn-default">
+                </div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+            </fieldset>
+        </form>
+    </div>
+</section>

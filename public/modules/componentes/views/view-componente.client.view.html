@@ -1,0 +1,32 @@
+<section data-ng-controller="ComponentesController" data-ng-init="findOne()">
+	<div class="page-header">
+		<h1 data-ng-bind="componente.marca"></h1>
+		Modelo:{{componente.modelo}}<br/>
+		Nserie:{{componente.nserie}}<br/>
+		Precio:{{componente.precio}}<br/>
+
+		<a class="thumbnail ng-scope" href="#/componente/{{componente.marca}}"><img ng-src="{{componente.url_img}}" src="{{componente.url_img}}"></a>
+        <a href="#/componente/{{componente.marca}}">{{componente.marca}}</a>
+
+
+		Url_img:{{componente.url_img}}<br/>
+		Descripcion:{{componente.descripcion}}<br/>
+
+	</div>
+	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == componente.user._id))">
+		<a class="btn btn-primary" href="/#!/componentes/{{componente._id}}/edit">
+			<i class="glyphicon glyphicon-edit"></i>
+		</a>
+		<a class="btn btn-primary" data-ng-click="remove();">
+			<i class="glyphicon glyphicon-trash"></i>
+		</a>
+	</div>
+	<small>
+		<em class="text-muted">
+			Posted on
+			<span data-ng-bind="componente.created | date:'mediumDate'"></span>
+			by
+			<span data-ng-bind="componente.user.displayName"></span>
+		</em>
+	</small>
+</section>

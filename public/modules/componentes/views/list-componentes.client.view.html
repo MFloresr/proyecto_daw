@@ -1,0 +1,57 @@
+<section data-ng-controller="ComponentesController" data-ng-init="find()">
+    <div class="page-header">
+        <h1>Componentes</h1>
+    </div>
+
+
+  <!--
+    <div class="list-group">
+        <a data-ng-repeat="componente in componentes" data-ng-href="#!/componentes/{{componente._id}}" class="list-group-item">
+			<small class="list-group-item-text">
+				Posted on
+				<span data-ng-bind="componente.created | date:'medium'"></span>
+				by
+				<span data-ng-bind="componente.user.displayName"></span>
+			</small>
+			<h4 class="list-group-item-heading" data-ng-bind="componente.marca"></h4>
+      Modelo:{{componente.modelo}}<br/>
+      Nserie:{{componente.nserie}}<br/>
+      Precio:{{componente.precio}}<br/>
+      Url_img:{{componente.url_img}}<br/>
+      Descripcion:{{componente.descripcion}}<br/>
+        </a>
+    </div>
+  -->
+    <div>
+      <table ng-table>
+        <tr ng-repeat="componente in componentes">
+          
+          <td data-title="Url_img">{{componente.url_img}}</td>
+          <td data-title="Marca">{{componente.marca}}</td>
+          <td data-title="Modelo">{{componente.modelo}}</td>
+          <td data-title="Nserie">{{componente.nserie}}</td>
+          <td data-title="Precio">{{componente.precio}}</td>
+          <td data-title="Descripcion">{{componente.descripcion}}</td>
+          <td>
+
+            <div class="table-actions">
+              <a class="btn btn-default" title="View" href="/#!/componentes/{{componente._id}}">
+                <span class="glyphicon glyphicon-eye-open"></span>
+              </a>
+              <a class="btn btn-default" title="Edit" href="/#!/componentes/{{componente._id}}/edit">
+                <span class="glyphicon glyphicon-edit"></span>
+              </a>
+                <button type="button" class="btn btn-danger" title="Remove" data-ng-click="remove(componente)">
+                  <span class="glyphicon glyphicon-remove-circle"></span>
+                </button>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+
+    <div class="alert alert-warning text-center" data-ng-hide="!componentes.$resolved || componentes.length">
+    	No Componentes yet, why don't you <a href="/#!/componentes/create">create one</a>?
+    </div>
+</section>

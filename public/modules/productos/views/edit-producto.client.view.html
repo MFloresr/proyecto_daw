@@ -1,0 +1,63 @@
+<section data-ng-controller="ProductosController" data-ng-init="findOne()">
+    <div class="page-header">
+        <h1>Edit Producto</h1>
+    </div>
+    <div class="col-md-12">
+        <form class="form-horizontal" data-ng-submit="update()" novalidate>
+            <fieldset>
+                <div class="form-group">
+                    <label class="control-label" for="marca">Marca</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="producto.marca" id="marca" class="form-control" placeholder="Marca" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="modelo">Modelo</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="producto.modelo" id="modelo" class="form-control" placeholder="Modelo" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="categoria">Categoria</label>
+                    <div class="controls">
+                        <select data-ng-model="categoria" id="categoria" class="form-control" placeholder="Categoria" required>
+                            <option ng-repeat="c in categorias" value="{{c._id}}">{{c.nombre}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="precio">Precio</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="producto.precio" id="precio" class="form-control" placeholder="Precio" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="proveedor">Proveedor</label>
+                    <div class="controls">
+                        <select data-ng-model="proveedor" id="proveedor" class="form-control" placeholder="Proveedor" required>
+                            <option ng-repeat="p in Proveedores" value="{{p._id}}">{{p.nombre}}</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="url_img">Url_img</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="producto.url_img" id="url_img" class="form-control" placeholder="Url_img" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="descripcion">Descripcion</label>
+                    <div class="controls">
+                        <input type="text" data-ng-model="producto.descripcion" id="descripcion" class="form-control" placeholder="Descripcion" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Update" class="btn btn-default">
+                </div>
+				<div data-ng-show="error" class="text-danger">
+					<strong data-ng-bind="error"></strong>
+				</div>
+            </fieldset>
+        </form>
+    </div>
+</section>

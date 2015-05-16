@@ -6,7 +6,7 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-		<a href="/#!/" class="navbar-brand">Tienda-online</a>
+		<a href="/#!/" class="navbar-brand">INFOTECK</a>
 	</div>
 	<nav class="collapse navbar-collapse" collapse="!isCollapsed" role="navigation">
 		<ul class="nav navbar-nav" data-ng-if="menu.shouldRender(authentication.user);">
@@ -22,7 +22,13 @@
 				</ul>
 				<a ng-switch-default href="/#!/{{item.link}}" data-ng-bind="item.title"></a>
 			</li>
-		</ul>
+		</ul> 
+
+<!--<div class="nav navbar-nav form-inline" data-ng-show="authentication.user">
+			Buscar: <input class="nav navbar-nav" ng-model="query">
+		</div>
+
+-->
 		<ul class="nav navbar-nav navbar-right" data-ng-hide="authentication.user">
 			<li ui-route="/signup" ng-class="{active: $uiRoute}">
 				<a href="/#!/signup">Registrarse</a>

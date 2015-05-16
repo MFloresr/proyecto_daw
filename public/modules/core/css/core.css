@@ -26,7 +26,7 @@
 .ng-table > tbody > tr > th, .ng-table > tfoot > tr > th, .ng-table > thead > tr > td, .ng-table > tbody > tr > td, .ng-table > tfoot > tr > td {
   height: 50px;
   border-bottom: 1px solid #e8e8e8;
-	padding-left:7%;
+	/*padding-left:7%;*/
 }
 
 .ng-table-filters {

@@ -73,7 +73,9 @@ exports.delete = function(req, res) {
  * List of Categorias
  */
 exports.list = function(req, res) { 
-	Categoria.find().sort('-created').populate('user', 'displayName').exec(function(err, categorias) {
+	Categoria.find().sort('-created').populate('user', 'displayName')
+	.populate('categoria','nombre')
+	.exec(function(err, categorias) {
 		if (err) {
 			return res.status(400).send({
 				message: errorHandler.getErrorMessage(err)

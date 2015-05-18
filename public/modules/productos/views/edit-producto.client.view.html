@@ -20,7 +20,7 @@
                 <div class="form-group">
                     <label class="control-label" for="categoria">Categoria</label>
                     <div class="controls">
-                        <select data-ng-model="categoria" id="categoria" class="form-control" placeholder="Categoria" required>
+                        <select data-ng-model="producto.categoria" id="categoria" class="form-control" placeholder="Categoria" required>
                             <option ng-repeat="c in categorias" value="{{c._id}}">{{c.nombre}}</option>
                         </select>
                     </div>
@@ -34,7 +34,7 @@
                 <div class="form-group">
                     <label class="control-label" for="proveedor">Proveedor</label>
                     <div class="controls">
-                        <select data-ng-model="proveedor" id="proveedor" class="form-control" placeholder="Proveedor" required>
+                        <select data-ng-model="producto.proveedor" id="proveedor" class="form-control" placeholder="Proveedor" required>
                             <option ng-repeat="p in Proveedores" value="{{p._id}}">{{p.nombre}}</option>
                         </select>
                     </div>

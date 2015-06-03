@@ -2,7 +2,7 @@
 
 // Productos controller
 angular.module('productos').controller('ProductosController', ['$scope', '$stateParams', '$location', 'Authentication', 'Productos', 'Categorias', 'Proveedores' ,
-	function($scope, $stateParams, $location, Authentication, Productos,Categorias,Proveedores) {
+	function($scope, $stateParams, $location, Authentication, Productos, Categorias,Proveedores) {
 		$scope.authentication = Authentication;
 
 

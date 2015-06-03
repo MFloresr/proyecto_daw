@@ -8,7 +8,8 @@ module.exports = function(app) {
 	app.route('/productos')
 		.get(productos.list)
 		.post(users.requiresLogin, productos.create);
-
+    app.route('/productos/paginate/:page/:total')
+    	.get(productos.paginate);
 	app.route('/productos/:productoId')
 		.get(productos.read)
 		.put(users.requiresLogin, productos.hasAuthorization, productos.update)

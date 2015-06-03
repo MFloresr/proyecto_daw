@@ -5,6 +5,9 @@
  */
 var mongoose = require('mongoose'),
 	Schema = mongoose.Schema;
+var mongoosePaginate = require('mongoose-paginate');
+ 
+
 
 /**
  * Producto Schema
@@ -58,5 +61,5 @@ var ProductoSchema = new Schema({
 		ref: 'User'
 	}
 });
-
+ProductoSchema.plugin(mongoosePaginate);
 mongoose.model('Producto', ProductoSchema);

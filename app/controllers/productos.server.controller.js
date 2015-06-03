@@ -9,6 +9,23 @@ var mongoose = require('mongoose'),
 	_ = require('lodash');
 
 /**
+ * Paginate producto
+ */
+
+ exports.paginate = function(req,res) {
+ 	Producto.paginate({},req.params.page, req.params.total,function(err, pageCount, paginatedResults, itemCount) {
+		if (err) {
+			return res.status(400).send({
+				message: errorHandler.getErrorMessage(err)
+			});
+		} else {
+			res.jsonp(paginatedResults);
+		}
+	});
+};
+
+
+ /**
  * Create a Producto
  */
 exports.create = function(req, res) {

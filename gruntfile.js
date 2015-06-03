@@ -139,7 +139,19 @@ module.exports = function(grunt) {
 			unit: {
 				configFile: 'karma.conf.js'
 			}
-		}
+		},
+		//imagemin rezise
+		image_resize: {
+			resize:{
+    			options: {
+      				width: 200,
+      				height: 200,
+      				//overwrite: true
+    			},
+    			src:'public/img/original/*.jpg',
+    			dest:'public/img/200/'
+    		}
+  		}
 	});
 
 	// Load NPM tasks
@@ -156,6 +168,9 @@ module.exports = function(grunt) {
 		grunt.config.set('applicationJavaScriptFiles', config.assets.js);
 		grunt.config.set('applicationCSSFiles', config.assets.css);
 	});
+
+	//resize image 
+	grunt.loadNpmTasks('grunt-image-resize');
 
 	// Default task(s).
 	grunt.registerTask('default', ['lint', 'concurrent:default']);
@@ -174,4 +189,7 @@ module.exports = function(grunt) {
 
 	// Test task.
 	grunt.registerTask('test', ['env:test', 'mochaTest', 'karma:unit']);
+	
+	// image-resize
+	grunt.registerTask('patata', ['image_resize']);
 };

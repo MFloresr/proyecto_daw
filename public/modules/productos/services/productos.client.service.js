@@ -10,4 +10,14 @@ angular.module('productos').factory('Productos', ['$resource',
 			}
 		});
 	}
+])
+.factory('ProductosPaginate', ['$resource',
+	function($resource) {
+		return $resource('productos/paginate/:page/:total', { page: '@_id' , total : '@_id'
+		}, {
+			update: {
+				method: 'PUT'
+			}
+		});
+	}
 ]);

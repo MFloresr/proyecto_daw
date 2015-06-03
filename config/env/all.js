@@ -27,7 +27,9 @@ module.exports = {
 				'public/lib/angular-ui-router/release/angular-ui-router.js',
 				'public/lib/angular-ui-utils/ui-utils.js',
 				'public/lib/angular-bootstrap/ui-bootstrap-tpls.js',
-				'public/lib/ng-table/dist/ng-table.min.js'
+				'public/lib/ng-table/dist/ng-table.min.js',
+				'public/lib/ngcart/dist/ngCart.js',
+				'public/lib/angular-currency-filter/dist/currency-filter.min.js'
 			]
 		},
 		css: [

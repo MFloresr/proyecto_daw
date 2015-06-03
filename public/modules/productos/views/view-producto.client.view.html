@@ -8,6 +8,23 @@
             <h4 class="list-group-item-heading" data-ng-bind="producto.proveedor.nombre"></h4>          
             <h4 class="list-group-item-heading" data-ng-bind="producto.url_img"></h4>
             <h4 class="list-group-item-heading" data-ng-bind="producto.descripcion"></h4>
+
+            <div class="col-xs-6 col-sm-3">
+                    <img class="img-center" ng-src="{{producto.url_img}}" src="{{producto.url_img}}"/>
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <span>
+                    	<h3>
+                    	Marca:
+                    	</h3>
+                    </span> <span class="list-group-item-heading" data-ng-bind="producto.marca"></span>
+                    <h4 class="list-group-item-heading" data-ng-bind="producto.modelo"></h4>
+                    <h4 class="list-group-item-heading" data-ng-bind="producto.categoria.nombre"></h4>
+                    <h4 class="list-group-item-heading" data-ng-bind="producto.precio"></h4>
+                    <h4 class="list-group-item-heading" data-ng-bind="producto.proveedor.nombre"></h4>     
+                    <!--<h4 class="list-group-item-heading" data-ng-bind="producto.url_img"></h4>-->
+                    <h4 class="list-group-item-heading" data-ng-bind="producto.descripcion"></h4>
+                </div>
 	</div>
 	<div class="pull-right" data-ng-show="((authentication.user) && (authentication.user._id == producto.user._id))">
 		<a class="btn btn-primary" href="/#!/productos/{{producto._id}}/edit">

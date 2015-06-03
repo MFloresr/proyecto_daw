@@ -23,12 +23,6 @@
 				<a ng-switch-default href="/#!/{{item.link}}" data-ng-bind="item.title"></a>
 			</li>
 		</ul> 
-
-<!--<div class="nav navbar-nav form-inline" data-ng-show="authentication.user">
-			Buscar: <input class="nav navbar-nav" ng-model="query">
-		</div>
-
--->
 		<ul class="nav navbar-nav navbar-right" data-ng-hide="authentication.user">
 			<li ui-route="/signup" ng-class="{active: $uiRoute}">
 				<a href="/#!/signup">Registrarse</a>
@@ -36,6 +30,9 @@
 			<li class="divider-vertical"></li>
 			<li ui-route="/signin" ng-class="{active: $uiRoute}">
 				<a href="/#!/signin">Identificarse</a>
+			</li>
+			<li> 
+				<a><input placeholder="Buscar" ng-model="query"></a>
 			</li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right" data-ng-show="authentication.user">
@@ -59,6 +56,14 @@
 					</li>
 				</ul>
 			</li>
+			<li>
+                <a ui-sref="#cartera" style="padding: 2px 0 0 50px; width:250px" href="#cartera">
+                    <ngcart-summary class="ng-isolate-scope">
+					</ngcart-summary>
+                </a>
+            </li>	
+
+
 		</ul>
 	</nav>
 </div>

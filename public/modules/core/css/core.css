@@ -60,3 +60,16 @@
   margin-top: 20px;
 }
 
+.slider-principal {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+img.img-center {
+  display: table;
+  margin: 0 auto;
+}
+.lazy {
+  height: 200px !important;
+  width: 170px !important;
+}
